@@ -16,7 +16,7 @@ const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 const OpenAI = require("openai");
 const redis = require('redis');
-require("dotenv").config();
+//require("dotenv").config();
 const crypto = require('crypto');
 
 const caracteres =
