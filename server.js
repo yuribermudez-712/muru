@@ -14,7 +14,7 @@ const cors = require("cors");
 const { WebSocketServer } = require("ws");
 const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
-const OpenAI = require("openai");
+//const OpenAI = require("openai");
 const redis = require('redis');
 //require("dotenv").config();
 const crypto = require('crypto');
@@ -76,7 +76,7 @@ async function conectarRedis() {
 
 
 const PUERTO = process.env.PUERTO || 8080;
-const openai = new OpenAI();
+//const openai = new OpenAI();
 let clientRedis;
 
 // --- Cliente de DigitalOcean Spaces (S3-compatible) ---
@@ -215,7 +215,7 @@ Responde ÚNICAMENTE con un JSON con esta forma exacta, sin texto adicional:
 }`;
 
 async function procesarImagen(listaAcumulada, imagenUrl, totalEsperado) {
-  const response = await openai.responses.create({
+  /*const response = await openai.responses.create({
     model: "gpt-5.6-luna",
     input: [
       {
@@ -234,7 +234,7 @@ async function procesarImagen(listaAcumulada, imagenUrl, totalEsperado) {
         ],
       },
     ],
-  });
+  });*/
 
   console.log(JSON.parse(response.output_text));
   return JSON.parse(response.output_text);
